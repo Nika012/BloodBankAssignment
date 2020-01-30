@@ -1,138 +1,386 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e43f3f">
-    <RelativeLayout
+    android:orientation="vertical"
+    tools:context=".SignUpActivity"
+    android:background="#fff"
+    >
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+
+
+        />
+
+    <LinearLayout
+        android:id="@+id/layoutForWelcome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="20dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-
-        <EditText
-            android:id="@+id/firstName"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
-            android:ems="15"
-            android:hint="Firstname"
-            android:inputType="textPersonName"/>
 
-        <EditText
-            android:id="@+id/lastName"
+            android:layout_gravity="center"
+            android:layout_marginBottom="90dp" />
+
+        <TextView
+            style="@style/textViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join Facebook" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="70dp"
-            android:ems="15"
-            android:hint="Lastname"
-            android:inputType="textPersonName" />
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:text="We'll help you create a new account in a few easy staps."
 
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="120dp"
-            android:ems="15"
-            android:hint="username"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="170dp"
-            android:ems="15"
-            android:hint="*******"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="220dp"
-            android:ems="15"
-            android:hint="Your Email Address"
-            android:inputType="textEmailAddress" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <EditText
-                android:id="@+id/group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:ems="8"
-                android:layout_marginTop="270dp"
-                android:hint="AB+"
-                android:inputType="text" />
-
-            <Button
-                android:id="@+id/viewmaps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="270dp"
-                android:text="Give Location" />
-        </LinearLayout>
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:ems="15"
-            android:layout_marginTop="320dp"
-            android:hint="Contact No."
-            android:inputType="phone" />
-
-        <EditText
-            android:id="@+id/dob"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:ems="15"
-            android:layout_marginTop="370dp"
-            android:hint="Contact No."
-            android:inputType="phone" />
+            />
 
         <Button
-            android:id="@+id/signupkey"
+            android:id="@+id/startsignup"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn1"
+            android:text="Next"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutForFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What's your name?"
+            style="@style/textViewStyle"/>
+
+        <LinearLayout
+            android:id="@+id/editTextHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fname"
+                    android:hint="First Name" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lname"
+                    android:hint="Last Name" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnTakeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:background="@drawable/btn1"
+            style="@style/button"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutForDob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtWhatIsYourDob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What's your birthday?"
+            style="@style/textViewStyle"/>
+
+        <DatePicker
+            android:id="@+id/datePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="440dp"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:id="@+id/btnTakeDob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn1"
+            android:text="Next"
+            style="@style/button"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutForGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtWhatIsYourGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What's your gender?"
+            style="@style/textViewStyle" />
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:text="You can change who sees your gender on your profile later"
+            android:layout_gravity="center_horizontal"/>
+
+        <RadioGroup
+            android:id="@+id/rgGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:divider="@color/colorPrimary"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:id="@+id/rbFemale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                style="@style/radioButtonStyle"/>
+
+            <RadioButton
+                android:id="@+id/rbMale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                style="@style/radioButtonStyle"/>
+
+            <RadioButton
+                android:id="@+id/rbOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other"
+                style="@style/radioButtonStyle"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnTakeGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn1"
+            android:text="Next"
+            style="@style/button"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutForPhone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Mobile Number"
+            style="@style/textViewStyle"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                android:inputType="phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_marginTop="40dp"
+            android:id="@+id/btnTakePhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn1"
+            android:text="Next"
+            style="@style/button"
+            android:textAllCaps="false"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutForEmail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Email"
+            style="@style/textViewStyle"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E-mail"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_marginTop="40dp"
+            android:id="@+id/btnTakeEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:background="@drawable/btn1"
+            style="@style/button"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutForPassword"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Password"
+            style="@style/textViewStyle"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_marginTop="40dp"
+            android:id="@+id/btnTakePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:background="@drawable/btn1"
+            style="@style/button"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutForSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finish Signing Up"
+            style="@style/textViewStyle"/>
+        <TextView
+            android:layout_below="@+id/title"
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:text="By Tapping Sign Up, you agree to Terms, Data Policy and Cookies Policy. You may recive SMS notifications from us and can opt out any time. Information from your address book will be continuously uploaded to Facebook so we can suggest friends and provide and improve ads for you and others, and offer a better service."
+
+            />
+
+
+        <Button
+            android:layout_below="@+id/desc"
+            android:layout_marginTop="40dp"
+            android:id="@+id/btnTakeSignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Sign Up"
-            android:layout_centerHorizontal="true"/>
+            android:background="@drawable/btn1"
+            style="@style/button"
+            android:textAllCaps="false"/>
+        <Button
 
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already have an account?"
-            android:textColor="#fff"
-            android:textSize="20dp"
-            android:layout_marginTop="500dp"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"/>
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="Sign  up without uploading my contacts"
+            android:layout_below="@+id/btnTakeSignup"
+            android:textColor="#0078FF"
+            android:textAllCaps="false"
+            />
 
         <TextView
-            android:id="@+id/signup1"
-            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign In"
-            android:textColor="#fff"
-            android:textSize="20dp"
-            android:layout_marginTop="540dp"
-            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:padding="10dp"
             android:textAlignment="center"
-            android:textStyle="bold"/>
+            android:textSize="12dp"
+            android:text="Info about contacts in your address book, including names, phone numbers and nicknames, will be sent to Facebook so we can suggest friends and provide and improve ads for you and others, and offer a better service. You can turn this off in Settings and mannage or delete contact info you share with Facebook. Learn More."
+
+            />
 
     </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

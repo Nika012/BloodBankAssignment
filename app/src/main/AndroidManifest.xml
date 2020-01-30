@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.bloodbankassignment">
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,22 +11,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".navigation"
-            android:label="@string/title_activity_navigation">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDHdWwYFb2brEFfx0-t3P753yj6ToqK4Jw" />
+
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".SignUpActivity"
+            android:label="Sign Up">
+        </activity>
+        <activity android:name=".MapsActivity"
+            android:label="Maps">
+        </activity>
+
+        <activity android:name=".RequestMapsActivity"
+            android:label="Maps">
+        </activity>
+
+        <activity android:name=".utils.ViewRequestActivity"
+            android:label="ALL Requests">
+        </activity>
+
+        <activity android:name=".Dashboard"
+            android:label="Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" />
-        <activity
-            android:name=".MainActivity"
-            tools:ignore="DuplicateActivity">
 
+        <activity android:name=".TestActivity"
+            android:label="Test">
+        </activity>
+
+        <activity android:name=".RequestActivity"
+            android:label="Request Blood">
+        </activity>
+
+        <activity android:name=".ViewRequestMapActivity"
+            android:label="Requested Blood">
+        </activity>
+
+        <activity android:name=".ViewDetailRequest"
+            android:label="Request Details">
         </activity>
     </application>
 

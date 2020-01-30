@@ -8,11 +8,13 @@
     android:orientation="vertical"
     android:background="@color/red"
     tools:context=".DashboardActivity">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:src="@drawable/logo"/>
-
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:textSize="30dp"
+      android:gravity="center_horizontal"
+      android:text="Dashboardn"
+      />
 <GridLayout
     android:columnCount="2"
     android:rowCount="3"
